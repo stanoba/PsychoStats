@@ -1041,7 +1041,8 @@ function _key($key, $root = null) {
 	$found = true;
 	while (count($nodes) > 1) {
 		$node = array_shift($nodes);
-		if (array_key_exists($node, $root)) {
+	      //if (array_key_exists($node, $root)) {
+		if (is_array($root) && array_key_exists($node, $root)) {
 			$root =& $root[$node];
 		} else {
 			$found = false;
