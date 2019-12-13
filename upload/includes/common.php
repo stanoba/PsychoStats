@@ -90,7 +90,10 @@ define(SAFE_PHP_SELF, htmlentities($_SERVER['PHP_SELF'], ENT_QUOTES, 'UTF-8'));
 
 // start PS object; all $dbxxxx variables are loaded from config.php
 #$ps = new PS(array(
-$ps = PsychoStats::create(array(
+#$ps = PsychoStats::create(array(
+
+$PsychoStatsobj= new PsychoStats();
+$ps = $PsychoStatsobj->create(array(
 	'fatal'		=> 0,
 	'dbtype'	=> $dbtype,
 	'dbhost'	=> $dbhost,
