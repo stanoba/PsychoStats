@@ -59,7 +59,9 @@ if (!$db->connected || !$db->dbexists($db->dbname)) {
 
 // now that the DB connection should be valid, reinitialize, so we'll have full access to user and session objects
 $cms->init();
-$ps = PsychoStats::create(array( 'dbhandle' => &$db ));
+// $ps = PsychoStats::create(array( 'dbhandle' => &$db ));
+$PsychoStatsobj = new PsychoStats();
+$ps = $PsychoStatsobj->create(array( 'dbhandle' => &$db ));
 $ps->theme_setup($cms->theme);
 
 
