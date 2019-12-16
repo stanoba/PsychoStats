@@ -74,7 +74,7 @@ $PHP_SELF 	= $_SERVER['PHP_SELF'];		// this is used so much we make sure it's gl
 define(SAFE_PHP_SELF, htmlentities($_SERVER['PHP_SELF'], ENT_QUOTES, 'UTF-8'));
 
 // create database handle
-#$db = PsychoDB::create(array(
+// $db = PsychoDB::create(array(
 $PsychoDBobj = new PsychoDB();
 $db = $PsychoDBobj->create(array(
 	'dbtype' => 'mysql',
