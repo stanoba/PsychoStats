@@ -209,7 +209,8 @@ function insert_columns($col, $key = null, $after = false) {
 		$newcols = array();
 		$curcols = array_values($this->columns);
 		$cols = array_keys($this->columns);
-		$c = array_pop(array_keys($cols, $key));	// which column index matches the $key 
+		$arraykeys = array_keys($cols, $key);
+		$c = array_pop($arraykeys);	// which column index matches the $key 
 		if ($after) $c++;
 		for ($i=0; $i < $c; $i++) {			// keep preceeding columns
 			$newcols[ $cols[$i] ] = $curcols[$i];
