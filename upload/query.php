@@ -74,7 +74,8 @@ if (!$server['cc'] and $server['ip']) {
 }
 
 // query the remote game server
-$pq = PQ::create(array(
+$PQobj = new PQ();
+$pq = $PQobj->create(array(
 	'ip' 		=> $server['host'],
 	'port'		=> $server['port'],
 	'querytype'	=> $server['querytype'],
